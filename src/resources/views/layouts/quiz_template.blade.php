@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quizy</title>
+  <link rel="stylesheet" href="{{asset('normalize.css')}}">
+  <link rel="stylesheet" href="{{asset('style.css')}}">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      @yield('header')
+    </header>
+    <h4>@yield('title')</h4>
+    <div class="kuizy_net">
+      @yield('quizy_net')
+    </div>
+    <div class="quiz_container">
+      @yield('contents')
+    </div>
+</div>
+</body>
+
+</html>
