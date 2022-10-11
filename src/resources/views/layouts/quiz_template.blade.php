@@ -17,7 +17,8 @@
     </header>
     <h4>@yield('title')</h4>
     <div class="kuizy_net">
-      @yield('quizy_net')
+        <img class= "k" src="https://pbs.twimg.com/profile_images/1352968042024562688/doQgizBj_400x400.jpg" alt="k">
+    <a class= "kuizy" href="https://kuizy.net/user/kuizy_net">@kuizy_net</a>
     </div>
     <div class="quiz_container">
       @yield('contents')
