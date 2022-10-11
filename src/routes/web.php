@@ -17,9 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 Route::get('quiz/{id}', 'QuizController@index')
     ->middleware(QuizMiddleware::class);
-=======
-Route::get('quiz/{id?}', 'QuizController@index');
->>>>>>> def5b4401e962b5cb05a81557fa0099a664bc808
