@@ -1,8 +1,0 @@
-CREATE TABLE
-people
-(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    mail TEXT,
-    age INTEGER
-);
