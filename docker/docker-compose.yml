@@ -2,12 +2,16 @@ version: "3"
 
 services:
   db:
-    build:
-      context: ./db
+    # build:
+    #   context: ./db
+    image: mysql:8.0
     ports:
       - 3306:3306
     volumes:
       - ./db/var/lib/mysql:/var/lib/mysql
+      - ./container/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ./container/db/etc/mysql/conf.d:/etc/mysql/conf.d
+      - ./container/db/data:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=laravel
       - MYSQL_USER=laravel
