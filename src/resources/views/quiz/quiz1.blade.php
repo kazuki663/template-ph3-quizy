@@ -5,21 +5,31 @@
 @endsection
 
 @section('title')
-    {{$title}}
+    {{$title->name}}
 @endsection
 
 @section('contents')
-  @for($i = 1;$i <= 3;$i++)
-    @component('components.quiz_contents')
-        @slot('quiz_num')
-        {{$i}}
-        @endslot
-        @slot('image')
-        {{$image[$i-1]}}
-        @endslot
-    @endcomponent
-        <ul>
-          @each('components.quiz_sections', $choices[$i-1], 'selection')
-        </ul>
-  @endfor
+@foreach($questions as $question)
+        <div class="quiz_num">
+            @component('components.quiz_contents')
+                @slot('quiz_num')
+                {{$loop->iteration}}
+                @endslot
+                @slot('image')
+                {{$question->image}}
+                @endslot
+            @endcomponent
+            <ul>
+                @each('components.quiz_sections', $choices[$loop->index], 'selection')
+                {{-- foreach使った方法 --}}
+                {{-- @foreach($choices[$loop->index] as $choice)
+                    <li class="selections" valid={{$choice->valid}}>{{$choice->choice}}</li>
+                @endforeach --}}
+            </ul>
+            <div class="correct-box">
+                <h3 class="judge_answer"></h3>
+                <div class="answer">正解は{{$answers[$loop->index]->choice}}です。</div>
+            </div>
+        </div>
+        @endforeach
 @endsection
