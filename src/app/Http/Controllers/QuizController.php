@@ -22,4 +22,11 @@ class QuizController extends Controller
         return view('quiz.quiz1', ['title'=>$title, 'questions'=>$questions, 'choices'=>$choices, 'answers'=>$answers]);
         // return view('quiz.quiz1', ['choices'=>$request->choices, 'image'=>$request->image, 'title'=>$request->title]);
     }
+
+    public function list(Request $request)
+    {
+        $links = DB::table('big_questions')->get();
+
+        return view('list.list', ['links'=>$links]);
+    }
 }

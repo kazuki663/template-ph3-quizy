@@ -17,5 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('quiz', 'QuizController@list');
 Route::get('quiz/{id}', 'QuizController@index');
     // ->middleware(QuizMiddleware::class);
