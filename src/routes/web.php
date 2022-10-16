@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\QuizMiddleware;
 
 Route::get('/', function () {

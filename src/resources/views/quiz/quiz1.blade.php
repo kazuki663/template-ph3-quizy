@@ -20,7 +20,7 @@
                 @endslot
             @endcomponent
             <ul>
-                @each('components.quiz_sections', $choices[$loop->index], 'selection')
+                @each('components.quiz_sections', $question->choices, 'selection')
                 {{-- foreach使った方法 --}}
                 {{-- @foreach($choices[$loop->index] as $choice)
                     <li class="selections" valid={{$choice->valid}}>{{$choice->choice}}</li>
