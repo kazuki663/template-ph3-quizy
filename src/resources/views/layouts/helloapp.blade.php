@@ -1,9 +1,10 @@
 <html>
   <head>
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
       body {
-        font-size: 16pt; color: #999; margin: 5px; 
+        font-size: 16pt; color: #999; margin: 5px;
         margin: -20px 0 -30px 0;
         letter-spacing: 0;
       }
