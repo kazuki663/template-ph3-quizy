@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\QuizMiddleware;
 use Illuminate\Support\Facades\Auth;
@@ -45,3 +46,9 @@ Route::get('/admin/del', 'AdminController@delete');
 Route::post('/admin/del', 'AdminController@remove');
 
 Route::get('/question', 'QuestionController@index');
+
+Route::get('/question/add', 'QuestionController@add');
+Route::post('/question/add', 'QuestionController@create');
+
+Route::get('/question/del', 'QuestionController@delete');
+Route::post('/question/del', 'QuestionController@remove');

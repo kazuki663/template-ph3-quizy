@@ -15,4 +15,9 @@ class Question extends Model
     {
         return $this->hasMany('App\Choice');
     }
+
+    protected $fillable = [
+        'name',
+        'path',
+    ];
 }

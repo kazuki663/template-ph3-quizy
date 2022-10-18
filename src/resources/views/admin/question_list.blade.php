@@ -10,7 +10,7 @@
         @foreach ($questions as $question)
             <tr>
                 <td>{{$question->id}}</td>
-                <td><a href="/choice?id={{$question->id}}">{{$question->image}}</a></td>
+                <td><a href="/choice?id={{$question->id}}"><img src="{{asset($question->image)}}" alt=""></a></td>
                 <td>
                     <input type="hidden" value="{{$question->id}}" name="ids[]">
                     <input type="text" value="{{$question->order}}" name="orders[]">
@@ -22,5 +22,5 @@
     </table>
     <input type="submit" value='順番変更'>
 </form>
-<a href="/question/add">追加</a>
+<a href="/question/add?id={{$question->big_question_id}}">追加</a>
 @endsection
