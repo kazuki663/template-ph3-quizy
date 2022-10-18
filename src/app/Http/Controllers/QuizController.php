@@ -12,9 +12,9 @@ class QuizController extends Controller
 {
     public function index(Request $request, $id)
     {
-        $title = DB::table('big_questions')->where('id', $id)->first();
-        $questions = Question::with('choices')->searchQuestions($id)->get();
-        $answers = DB::table('choices')->join('questions', 'choices.question_id', '=', 'questions.id')->where('big_question_id', $id)->where('valid', 1)->get();
+        $title = BigQuestion::where('id', $id)->first();
+        $questions = Question::with('choices')->searchQuestions($id)->Hide()->get();
+        $answers = DB::table('choices')->join('questions', 'choices.question_id', '=', 'questions.id')->where('big_question_id', $id)->where('valid', 1)->where('choices.hide', 0)->orderBy('question_id', 'asc')->get();
 
         return view('quiz.quiz1', ['title'=>$title, 'questions'=>$questions, 'answers'=>$answers]);
         // return view('quiz.quiz1', ['choices'=>$request->choices, 'image'=>$request->image, 'title'=>$request->title]);
@@ -22,7 +22,7 @@ class QuizController extends Controller
 
     public function list(Request $request)
     {
-        $links = BigQuestion::orderBy('order', 'asc')->get();
+        $links = BigQuestion::orderBy('order', 'asc')->Hide()->get();
 
         return view('list.list', ['links'=>$links]);
     }

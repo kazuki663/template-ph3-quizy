@@ -20,4 +20,9 @@ class Question extends Model
         'name',
         'path',
     ];
+
+    public function scopeHide($query)
+    {
+        return $query->where('hide', 0);
+    }
 }

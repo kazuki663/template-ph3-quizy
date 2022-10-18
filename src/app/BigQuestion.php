@@ -11,4 +11,9 @@ class BigQuestion extends Model
     public static $rules = array(
         'name' => 'required',
     );
+
+    public function scopeHide($query)
+    {
+        return $query->where('hide', 0);
+    }
 }

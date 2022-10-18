@@ -20,4 +20,9 @@ class Choice extends Model
     {
         return $this->belongsTo('App\Question');
     }
+
+    public function scopeHide($query)
+    {
+        return $query->where('hide', 0);
+    }
 }

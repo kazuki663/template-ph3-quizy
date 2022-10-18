@@ -18,9 +18,10 @@
                 <td><a href="/question/edit?id={{$question->id}}">編集</a></td>
                 <td><a href="/question/del?id={{$question->id}}">削除</a></td>
             </tr>
+            <input type="hidden" value="{{$question->big_question_id}}" name="big_question_id">
         @endforeach
     </table>
     <input type="submit" value='順番変更'>
 </form>
-<a href="/question/add?id={{$question->big_question_id}}">追加</a>
+<a href="/question/add?id={{$id}}">追加</a>
 @endsection

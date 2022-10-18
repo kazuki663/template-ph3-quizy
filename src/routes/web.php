@@ -46,9 +46,25 @@ Route::get('/admin/del', 'AdminController@delete');
 Route::post('/admin/del', 'AdminController@remove');
 
 Route::get('/question', 'QuestionController@index');
+Route::post('/question', 'QuestionController@order');
 
 Route::get('/question/add', 'QuestionController@add');
 Route::post('/question/add', 'QuestionController@create');
 
+Route::get('/question/edit', 'QuestionController@edit');
+Route::post('/question/edit', 'QuestionController@update');
+
 Route::get('/question/del', 'QuestionController@delete');
 Route::post('/question/del', 'QuestionController@remove');
+
+Route::get('/choice', 'ChoicesController@index');
+Route::post('/choice', 'ChoicesController@change');
+
+Route::get('/choice/add', 'ChoicesController@add');
+Route::post('/choice/add', 'ChoicesController@create');
+
+Route::get('/choice/edit', 'ChoicesController@edit');
+Route::post('/choice/edit', 'ChoicesController@update');
+
+Route::get('/choice/del', 'ChoicesController@delete');
+Route::post('/choice/del', 'ChoicesController@remove');
