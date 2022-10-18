@@ -18,6 +18,8 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('big_question_id');
             $table->string('image');
+            $table->integer('order');
+            $table->integer('hide')->default(0);
             $table->timestamps();
         });
     }

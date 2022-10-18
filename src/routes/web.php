@@ -33,3 +33,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::post('/admin/login', 'AdminController@check');
 
 Route::get('/admin', 'AdminController@index')->middleware('auth');
+Route::post('/admin', 'AdminController@order');
+
+Route::get('/admin/add', 'AdminController@add');
+Route::post('/admin/add', 'AdminController@create');
+
+Route::get('/admin/edit', 'AdminController@edit');
+Route::post('/admin/edit', 'AdminController@update');
+
+Route::get('/admin/del', 'AdminController@delete');
+Route::post('/admin/del', 'AdminController@remove');
+
+Route::get('/question', 'QuestionController@index');

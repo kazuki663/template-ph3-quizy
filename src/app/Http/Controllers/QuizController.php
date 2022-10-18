@@ -22,7 +22,7 @@ class QuizController extends Controller
 
     public function list(Request $request)
     {
-        $links = BigQuestion::all();
+        $links = BigQuestion::orderBy('order', 'asc')->get();
 
         return view('list.list', ['links'=>$links]);
     }
