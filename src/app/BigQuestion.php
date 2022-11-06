@@ -9,7 +9,7 @@ class BigQuestion extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'name' => 'required',
+        'orders.*' => 'integer',
     );
 
     public function scopeHide($query)

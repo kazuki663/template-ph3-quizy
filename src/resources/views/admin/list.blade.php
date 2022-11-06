@@ -3,6 +3,9 @@
 @section('title', 'タイトル一覧')
 
 @section('contents')
+@if($errors)
+    {{$errors->first('orders.*')}}
+@endif
 <form action="/admin" method="post">
     @csrf
     <table>

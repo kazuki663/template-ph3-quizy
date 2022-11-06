@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\BigQuestion;
+use Illuminate\Auth\Events\Validated;
 
 class AdminController extends Controller
 {
@@ -18,14 +19,14 @@ class AdminController extends Controller
     public function order(Request $request)
     {
         $lists = $request->input('ids');
-
+        $this->validate($request, BigQuestion::$rules);
         $orders = $request->input('orders');
-
             foreach($lists as $index => $id){
                 $title = BigQuestion::where('id', $id)->first();
                 $title->order = $orders[$index];
                 $title->save();
             }
+        
         return redirect ('/admin');
     }
 
